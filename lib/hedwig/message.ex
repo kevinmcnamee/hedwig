@@ -9,6 +9,8 @@ defmodule Hedwig.Message do
   @type robot   :: pid
   @type room    :: binary
   @type text    :: binary
+  @type thread_ts    :: binary
+  @type ts    :: binary
   @type type    :: binary
   @type user    :: Hedwig.User.t
 
@@ -19,6 +21,8 @@ defmodule Hedwig.Message do
     robot:   robot,
     room:    room,
     text:    text,
+    thread_ts: thread_ts,
+    ts:      ts,
     type:    type,
     user:    user
   }
@@ -29,6 +33,8 @@ defmodule Hedwig.Message do
             robot:   nil,
             room:    nil,
             text:    nil,
+            thread_ts:    nil,
+            ts:    nil,
             type:    nil,
             user:    %Hedwig.User{}
 end
