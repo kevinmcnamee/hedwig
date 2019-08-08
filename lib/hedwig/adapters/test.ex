@@ -29,7 +29,14 @@ defmodule Hedwig.Adapters.Test do
   end
 
   def handle_info({:message, msg}, %{robot: robot} = state) do
-    msg = %Hedwig.Message{robot: robot, text: msg.text, user: msg.user}
+    msg = %Hedwig.Message{
+      robot: robot,
+      text: msg.text,
+      user: msg.user,
+      room: msg.room,
+      ts: msg.ts
+    }
+
     Hedwig.Robot.handle_in(robot, msg)
     {:noreply, state}
   end
